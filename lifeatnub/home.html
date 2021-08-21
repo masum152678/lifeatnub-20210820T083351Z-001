@@ -1,0 +1,446 @@
+<!-- <?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location:login.php");
+}
+?> -->
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logoItem">
+           <p>Life At NUB</p>
+        </div>
+        <ul>
+          <li>
+            <a href=""><img src="images/home.png" /> </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/groups/1787474091555916"><img src="images/fb.png" /> </a>
+          </li>
+
+          <li>
+            <a href=""><img src="images/email.png" /> </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="search-box">
+          <img src="images/search.png" />
+          <input type="text" placeholder="Search" />
+        </div>
+        <div class="nav-user-icon online" onclick="settingsMenuToggle();">
+          <img src="images/rayhanur.jpg" />
+        </div>
+      </div>
+
+      <div class="settings-menu">
+        <div id="dark-btn">
+          <span></span>
+        </div>
+        <div class="settings-menu-inner">
+          <div class="user-profile">
+            <img src="images/rayhanur.jpg" />
+            <div>
+              <p>Admin Profile</p>
+              <a href="#">See Your Profile</a>
+            </div>
+          </div>
+          <hr />
+          <div class="settings-links">
+            <img src="images/logout.png" class="settings-icon" />
+            <a href="logout.php">Logout</a>
+            <img src="images/arrow.png" width="10px" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="left-sidebar">
+        <div class="imp-links">
+          <a href="https://angry-hoover-c72a61.netlify.app/?fbclid=IwAR3PBsZaQuV1EGeNW7caGTVTvtCI3Gna1CwkIfStebhyxxB_XAYWisWy578">
+            <img src="images/friends.png" />
+            Friends
+          </a>
+          <a href="https://www.facebook.com/groups/1787474091555916">
+            <img src="images/fbgroup.png" />
+            Facebook Groups
+          </a>
+          <a href="#">
+            <img src="images/achi.png" />
+            Achivement
+          </a>
+          <a id="clickMe" href="#">
+            <img src="images/about.png" />
+            About Us
+          </a>
+        </div>
+        <div class="shortcut-links">
+          <p>Menu</p>
+          <div class="homepage">
+            <a href="file:///I:/WebDevMasum/lifeatnub-20210820T083351Z-001/lifeatnub/home.html">
+              <img src="images/home.png" />
+              Home
+            </a>
+          </div>
+          <a href="#">
+            <img src="images/about.png" />
+            about
+          </a>
+          <a href="#">
+            <img src="images/setting.png" />
+            Contact
+          </a>
+          <a href="#">
+            <img src="images/achi.png" />
+            Others
+          </a>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="write-post-container">
+          <div class="user-profile">
+            <img src="images/rayhanur.jpg" />
+            <div>
+              <p>Rayhanur Islam</p>
+              <small>
+                Public
+                <i class="fas fa fa-caret-down"></i>
+              </small>
+            </div>
+          </div>
+          <div class="post-input-container">
+                <textarea id="handlePost" rows="3" placeholder="What's on your mind?"></textarea>
+            <div class="add-post-links">
+              <a href="#">
+                <img src="images/photo.png" />
+                Photo/Video
+              </a>
+              <a href="#">
+                <button id="submit-post" onclick="myFunction()">Click me</button>
+               
+
+                <p id="demo"></p>
+                <script>
+                  function myFunction() {
+                    document.getElementById('demo').innerHTML ='Post Uploaded' //my comment
+                  }
+                </script>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="submit-area">
+
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/rayhanur.jpg" />
+              <div>
+                <p>Rayhanur Islam</p>
+                <span>June 21 2021</span>
+              </div>
+            </div>
+            <a href="#">
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+          </div>
+
+          <p class="post-text">
+            Stay with <span>@Lifeatnub</span> মন চাইলে মন পাইবা দেহ চাইলে দেহ
+            চাইলেই দিয়া দিবে বাদ থাকবে না কেহ!
+          </p>
+          <img src="images/post1.jpg" class="post-img" />
+          <div class="post-row">
+            <div class="activity-icons">
+              <div >
+                 <button class="button" onclick="incrementButton()">
+                   <i class="fas fa-thumbs-up"></i>
+                 </button>
+                 <p id="incrementText">0</p>
+              </div>
+              <div>
+                <img src="images/comments.png" />
+                19
+              </div>
+              <div>
+                <img src="images/share.png" />
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/rayhanur.jpg" />
+              <div>
+                <p>Rayhanur Islam</p>
+                <span>June 21 2021</span>
+              </div>
+            </div>
+            <a href="#">
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+          </div>
+
+          <p class="post-text">
+            Proud Moments of Our Family <span>@Lifeatnub</span>
+          </p>
+          <img src="images/post4.jpg" class="post-img" />
+          <div class="post-row">
+            <div class="activity-icons">
+              <div >
+                 <button id="add">
+                   <i class="fas fa-thumbs-up"></i>
+                 </button>
+                 <input type="text" value="0">
+               </div>
+              <div>
+                <img src="images/comments.png" />
+                19
+              </div>
+              <div>
+                <img src="images/share.png" />
+                120
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/sourav.jpg" />
+              <div>
+                <p>Sourav Debnath</p>
+                <span>June 21 2021</span>
+              </div>
+            </div>
+            <a href="#">
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+          </div>
+
+          <p class="post-text">
+            পরিমনি কে কারামুক্ত করতে <span>@Saddam Hosen </span> law নিয়ে
+            পড়াশোনা শুরু করেছে।
+            <a href="#">#justicePorimoni</a>
+            <a href="#">#saddamlaw</a>
+          </p>
+          <img src="images/post2.jpg" class="post-img" />
+          <div class="post-row">
+            <div class="activity-icons">
+              <div >
+                <button class="button" onclick="incrementButton()">
+                  <i class="fas fa-thumbs-up"></i>
+                </button>
+                <p id="incrementText">0</p>
+             </div>
+              <div>
+                <img src="images/comments.png" />
+                19
+              </div>
+              <div>
+                <img src="images/share.png" />
+                120
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/saddam.jpg" />
+              <div>
+                <p>Saddam Hosen</p>
+                <span>June 21 2021</span>
+              </div>
+            </div>
+            <a href="#">
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+          </div>
+
+          <p class="post-text">
+            <span>@Shakil Shakhawat </span> ভাইয়ের জন্য সবাই দোয়া করবেন! ট্রিট
+            চাইলাম না তাইলে আরেক কিডনী যেতে পারে। Thanks me @Shakil Shakhawat
+          </p>
+          <img src="images/post3.jpg" class="post-img" />
+          <div class="post-row">
+            <div class="activity-icons">
+              <div >
+                <button id="add">
+                  <i class="fas fa-thumbs-up"></i>
+                </button>
+                <input type="text" value="0">
+               </div>
+              <div>
+                <img src="images/comments.png" />
+                19
+              </div>
+              <div>
+                <img src="images/share.png" />
+                120
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/masum.jpg" />
+              <div>
+                <p>MD Masum</p>
+                <span>June 21 2021</span>
+              </div>
+            </div>
+            <a href="#">
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+          </div>
+
+          <p class="post-text">NUB CSE Meet-UP এবং বসন্ত বরন উৎসব - ১৪২৭</p>
+          <img src="images/post5.jpg" class="post-img" />
+          <div class="post-row">
+            <div class="activity-icons">
+              <div >
+                <button id="add">
+                  <i class="fas fa-thumbs-up"></i>
+                </button>
+                <input type="text" value="0">
+             </div>
+              <div>
+                <img src="images/comments.png" />
+                19
+              </div>
+              <div>
+                <img src="images/share.png" />
+                120
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="load-more-btn">Load More</button>
+      </div>
+      <div class="right-sidebar">
+        <div class="sidebar-title">
+          <h4>Events</h4>
+          <a href="#">See All</a>
+        </div>
+        <div class="event">
+          <div class="left-event">
+            <h3>26</h3>
+            <span>August</span>
+          </div>
+          <div class="right-event">
+            <h4>Semester Final</h4>
+            <p>
+              <i class="fa fa-map-marker"></i>
+              Online Google Classroom
+            </p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+        <div class="event">
+          <div class="left-event">
+            <h3>6</h3>
+            <span>September</span>
+          </div>
+          <div class="right-event">
+            <h4>Semester Break Tour</h4>
+            <p>
+              <i class="fa fa-map-marker"></i>
+              Noakhali & Vurgin Dip
+            </p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+
+        <div class="sidebar-title">
+          <h4>Buddies</h4>
+          <a href="#">Hide Chat</a>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/rayhanur.jpg" />
+          </div>
+          <p>Rayhanur Islam</p>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/masum.jpg" />
+          </div>
+          <p>Md Masum</p>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/saddam.jpg" />
+          </div>
+          <p>Saddam Hosen</p>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/sourav.jpg" />
+          </div>
+          <p>sourav Debnath</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+      <p>Copyright 2021 &copy;LifeatNUB all rights reserved</p>
+      <div id="foter"></div>
+    </div>
+
+    <!-- <script>
+      $(function () {
+        $('#foter').load('/footer/index.html')
+      })
+    </script> -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+
+<script>
+  const submitPost = document.getElementById("submit-post");
+  submitPost.addEventListener("click",function(){
+    let currentTextBox = document.getElementById("handlePost").value;
+     console.log(currentTextBox);
+    let postBox = document.getElementById("submit-area");
+    const paragraph = document.createElement("p");
+    paragraph.innerHTML = currentTextBox;
+    postBox.appendChild(paragraph);
+  });
+
+  function incrementButton(){
+  var element = document.getElementById('incrementText');
+  var value = element.innerHTML;
+  ++value;
+  console.log(value);
+  document.getElementById('incrementText').innerHTML = value;
+}
+
+</script>
